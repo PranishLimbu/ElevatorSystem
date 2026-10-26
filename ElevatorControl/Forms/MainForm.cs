@@ -11,7 +11,7 @@ namespace ElevatorControl.Forms
     //  - OBSERVER: it also implements IElevatorObserver to refresh the floor status displays
     public class MainForm : Form, IElevatorObserver
     {
-        private readonly ElevatorController controller = new ElevatorController(2);
+        private readonly ElevatorController controller = new ElevatorController(1);
         private readonly ElevatorLogRepository repository = new ElevatorLogRepository();
         private readonly LoggingObserver logger;
 
@@ -52,7 +52,7 @@ namespace ElevatorControl.Forms
         private void BuildLayout()
         {
             Text = "Elevator Control - 2 floors, 2 elevators";
-            ClientSize = new Size(950, 560);
+            ClientSize = new Size(620, 560);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
@@ -99,7 +99,7 @@ namespace ElevatorControl.Forms
 
             lblStatus = new Label();
             lblStatus.Location = new Point(20, 520);
-            lblStatus.Size = new Size(910, 25);
+            lblStatus.Size = new Size(580, 25);
             lblStatus.Text = "Ready.";
             Controls.Add(lblStatus);
         }
